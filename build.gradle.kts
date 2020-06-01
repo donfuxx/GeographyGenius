@@ -1,3 +1,7 @@
+plugins {
+    id ("com.github.ben-manes.versions").version(Versions.gradleVersionsPlugin)
+}
+
 buildscript {
     repositories {
         google()
@@ -6,6 +10,7 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:${Versions.gradle}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
+        classpath("com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersionsPlugin}")
     }
 }
 
