@@ -10,6 +10,21 @@ object Versions {
     const val kotlin = "1.3.72"
 }
 
+object Deps {
+    const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+}
+
+object TestDeps {
+    const val jUnit = "junit:junit:${Versions.junit}"
+}
+
+object AndroidTestDeps {
+    const val junitExt = "androidx.test.ext:junit:${Versions.junitExt}"
+    const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
+}
+
 object DefaultConfig {
     const val minSdk = 21
     const val targetSdk = 29
