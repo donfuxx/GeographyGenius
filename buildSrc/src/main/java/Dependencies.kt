@@ -9,3 +9,15 @@ object Versions {
     const val junitExt = "1.1.1"
     const val kotlin = "1.3.72"
 }
+
+object DefaultConfig {
+    const val minSdk = 21
+    const val targetSdk = 29
+    const val compileSdk = 29
+    const val appId = "com.appham.geographygenius"
+}
+
+object Releases {
+    val versionCode = 1
+    val versionName = "1.0"
+}
