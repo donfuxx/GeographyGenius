@@ -1,3 +1,7 @@
+object Modules {
+    val home = ":features:home"
+}
+
 object Versions {
     const val appCompat = "1.1.0"
     const val constraintLayout = "1.1.3"

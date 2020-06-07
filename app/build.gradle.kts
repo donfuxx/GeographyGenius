@@ -20,6 +20,7 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.home))
     implementation(Deps.coreKtx)
     implementation(Deps.appCompat)
     implementation(Deps.constraintLayout)
