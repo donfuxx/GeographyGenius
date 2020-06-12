@@ -1,5 +1,6 @@
 object Modules {
     val home = ":features:home"
+    val game = ":features:game"
 }
 
 object Versions {

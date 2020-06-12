@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
 }
 
 apply {
@@ -20,9 +20,6 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.home))
-    implementation(project(Modules.game))
-
     implementation(Deps.coreKtx)
     implementation(Deps.appCompat)
     implementation(Deps.constraintLayout)

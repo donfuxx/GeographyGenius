@@ -1,5 +1,6 @@
 include(
         ":app",
-        ":features:home"
+        ":features:home",
+        ":features:game"
 )
 rootProject.name = "Geography Genius"
