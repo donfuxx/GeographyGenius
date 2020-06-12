@@ -9,3 +9,4 @@ Technical Notes:
 * Tech Stack:
  * App coded with Kotlin
  * Kotlin .kts files preferred over Groovy Gradle files when appropriate
+ * Android ViewModel

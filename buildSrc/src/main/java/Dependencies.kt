@@ -13,12 +13,15 @@ object Versions {
     const val junit = "4.12"
     const val junitExt = "1.1.1"
     const val kotlin = "1.3.72"
+    const val lifecycle = "2.2.0"
 }
 
 object Deps {
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+    const val lifecycleExtenstions = "android.arch.lifecycle:extensions:${Versions.lifecycle}"
+    const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
 }
 
 object TestDeps {
