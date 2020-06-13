@@ -11,7 +11,7 @@ class HomeActivity : AppCompatActivity() {
 
     private val homeViewModel: HomeViewModel by viewModel()
 
-    private val homeNavigator: HomeNavigation by inject { parametersOf(this) }
+    private val homeNavigator: HomeNavigation by inject { parametersOf(this, homeViewModel) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class HomeActivity : AppCompatActivity() {
 
         btnGoToGame.setOnClickListener {
             homeViewModel.onGoToGame()
-            homeNavigator.goToGame()
+            homeNavigator
         }
     }
 }
