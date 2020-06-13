@@ -25,6 +25,9 @@ dependencies {
     implementation(Deps.constraintLayout)
     implementation(Deps.lifecycleExtenstions)
     implementation(Deps.lifecycleViewModel)
+    implementation(Deps.koinAndroid)
+    implementation(Deps.koinCore)
+    implementation(Deps.koinViewModel)
 
     testImplementation(TestDeps.jUnit)
 

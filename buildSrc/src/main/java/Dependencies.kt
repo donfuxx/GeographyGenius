@@ -12,6 +12,7 @@ object Versions {
     const val gradleVersionsPlugin = "0.28.0"
     const val junit = "4.12"
     const val junitExt = "1.1.1"
+    const val koin = "2.1.6"
     const val kotlin = "1.3.72"
     const val lifecycle = "2.2.0"
 }
@@ -24,6 +25,9 @@ object Deps {
     const val gradleVersionsPlugin = "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersionsPlugin}"
     const val lifecycleExtenstions = "android.arch.lifecycle:extensions:${Versions.lifecycle}"
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    const val koinAndroid = "org.koin:koin-android:${Versions.koin}"
+    const val koinCore = "org.koin:koin-core:${Versions.koin}"
+    const val koinViewModel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
 }
