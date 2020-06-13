@@ -1,7 +1,7 @@
 package com.appham.geographygenius
 
 import android.app.Application
-import com.appham.geographygenius.di.appModule
+import com.appham.geographygenius.features.home.homeViewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -13,7 +13,7 @@ class App : Application() {
         startKoin{
             androidLogger()
             androidContext(this@App)
-            modules(appModule)
+            modules(listOf(homeViewModelModule))
         }
     }
 }
