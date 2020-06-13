@@ -8,9 +8,9 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:${Versions.gradle}")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
-        classpath("com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersionsPlugin}")
+        classpath(Deps.gradle)
+        classpath(Deps.kotlinGradlePlugin)
+        classpath(Deps.gradleVersionsPlugin)
     }
 }
 

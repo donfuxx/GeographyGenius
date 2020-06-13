@@ -20,8 +20,12 @@ object Deps {
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+    const val gradle = "com.android.tools.build:gradle:${Versions.gradle}"
+    const val gradleVersionsPlugin = "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersionsPlugin}"
     const val lifecycleExtenstions = "android.arch.lifecycle:extensions:${Versions.lifecycle}"
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
+    const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
 }
 
 object TestDeps {
