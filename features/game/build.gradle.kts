@@ -21,14 +21,7 @@ android {
 }
 
 dependencies {
-    implementation(Deps.coreKtx)
-    implementation(Deps.appCompat)
-    implementation(Deps.constraintLayout)
-    implementation(Deps.lifecycleExtenstions)
-    implementation(Deps.lifecycleViewModel)
-    implementation(Deps.koinAndroid)
-    implementation(Deps.koinCore)
-    implementation(Deps.koinViewModel)
+    implementations()
 
     testImplementation(TestDeps.jUnit)
 

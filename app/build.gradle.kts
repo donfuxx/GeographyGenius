@@ -23,12 +23,7 @@ dependencies {
     implementation(project(Modules.home))
     implementation(project(Modules.game))
 
-    implementation(Deps.appCompat)
-    implementation(Deps.constraintLayout)
-    implementation(Deps.coreKtx)
-    implementation(Deps.koinAndroid)
-    implementation(Deps.koinCore)
-    implementation(Deps.koinViewModel)
+    implementations()
 
     testImplementation(TestDeps.jUnit)
 
