@@ -1,4 +1,4 @@
-package com.appham.game
+package com.appham.geographygenius.feature.game
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry

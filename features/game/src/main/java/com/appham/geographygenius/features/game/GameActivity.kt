@@ -1,4 +1,4 @@
-package com.appham.game
+package com.appham.geographygenius.features.game
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

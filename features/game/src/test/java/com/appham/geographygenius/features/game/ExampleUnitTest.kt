@@ -1,4 +1,4 @@
-package com.appham.game
+package com.appham.geographygenius.features.game
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
