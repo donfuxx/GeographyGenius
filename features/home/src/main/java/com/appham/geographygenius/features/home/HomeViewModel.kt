@@ -29,5 +29,5 @@ sealed class HomeNavigationEvent {
 }
 
 interface HomeNavigation {
-    fun goToGame()
+    fun init()
 }

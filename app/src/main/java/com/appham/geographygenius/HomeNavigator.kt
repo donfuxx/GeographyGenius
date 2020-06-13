@@ -17,10 +17,10 @@ val homeNavigatorModule = module {
 
 class HomeNavigator(
     private val activity: AppCompatActivity,
-    homeViewModel: HomeViewModel
+    private val homeViewModel: HomeViewModel
 ) : HomeNavigation {
 
-    init {
+    override fun init() {
         homeViewModel.getNavEvents().observe(activity, Observer { event ->
             when(event) {
                 is HomeNavigationEvent.GoToGame -> goToGame()
@@ -28,7 +28,7 @@ class HomeNavigator(
         })
     }
 
-    override fun goToGame() {
+    private fun goToGame() {
         activity.startActivity(Intent(activity, GameActivity::class.java))
     }
 
