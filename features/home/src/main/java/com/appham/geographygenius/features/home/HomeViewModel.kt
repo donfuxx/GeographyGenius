@@ -12,8 +12,10 @@ val homeViewModelModule = module {
 
 class HomeViewModel : ViewModel() {
 
-
     fun onGoToGame() {
-
     }
+}
+
+interface HomeNavigation {
+    fun goToGame()
 }

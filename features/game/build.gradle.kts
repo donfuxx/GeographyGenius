@@ -1,5 +1,6 @@
 plugins {
     id("com.android.library")
+    id("kotlin-android")
 }
 
 apply {
@@ -23,6 +24,11 @@ dependencies {
     implementation(Deps.coreKtx)
     implementation(Deps.appCompat)
     implementation(Deps.constraintLayout)
+    implementation(Deps.lifecycleExtenstions)
+    implementation(Deps.lifecycleViewModel)
+    implementation(Deps.koinAndroid)
+    implementation(Deps.koinCore)
+    implementation(Deps.koinViewModel)
 
     testImplementation(TestDeps.jUnit)
 
