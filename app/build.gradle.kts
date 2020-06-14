@@ -25,7 +25,8 @@ dependencies {
 
     implementations()
 
-    testImplementation(TestDeps.jUnit)
+    testImplementation(TestDeps.jUnit5)
+    testRuntimeOnly(TestRuntimeOnly.jUnit5)
 
     androidTestImplementation(AndroidTestDeps.junitExt)
     androidTestImplementation(AndroidTestDeps.espressoCore)

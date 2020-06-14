@@ -10,7 +10,7 @@ object Versions {
     const val espressoCore = "3.2.0"
     const val gradle = "4.0.0"
     const val gradleVersionsPlugin = "0.28.0"
-    const val junit = "4.12"
+    const val junit5 = "5.6.2"
     const val junitExt = "1.1.1"
     const val koin = "2.1.6"
     const val kotlin = "1.3.72"
@@ -33,7 +33,11 @@ object Deps {
 }
 
 object TestDeps {
-    const val jUnit = "junit:junit:${Versions.junit}"
+    const val jUnit5 = "org.junit.jupiter:junit-jupiter-api:${Versions.junit5}"
+}
+
+object TestRuntimeOnly {
+    const val jUnit5 = "org.junit.jupiter:junit-jupiter-engine:${Versions.junit5}"
 }
 
 object AndroidTestDeps {
