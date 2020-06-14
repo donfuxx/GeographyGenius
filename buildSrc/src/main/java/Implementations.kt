@@ -4,7 +4,7 @@ fun DependencyHandler.implementations() {
     implementation(Deps.coreKtx)
     implementation(Deps.appCompat)
     implementation(Deps.constraintLayout)
-    implementation(Deps.lifecycleExtensions)
+    implementation(Deps.lifecycleExtenstions)
     implementation(Deps.lifecycleViewModel)
     implementation(Deps.koinAndroid)
     implementation(Deps.koinCore)
@@ -14,8 +14,6 @@ fun DependencyHandler.implementations() {
 fun DependencyHandler.testImplementations() {
     testImplementation(TestDeps.jUnit5)
     testRuntimeOnly(TestRuntimeOnly.jUnit5)
-    testImplementation(TestDeps.mockk)
-    testImplementation(TestDeps.livecycleCoreTesting)
 }
 
 private fun DependencyHandler.implementation(dependency: String) = add("implementation", dependency)
