@@ -15,6 +15,7 @@ object Versions {
     const val koin = "2.1.6"
     const val kotlin = "1.3.72"
     const val lifecycle = "2.2.0"
+    const val lifecycleExtensions = "1.1.1"
 }
 
 object Deps {
@@ -23,7 +24,7 @@ object Deps {
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val gradle = "com.android.tools.build:gradle:${Versions.gradle}"
     const val gradleVersionsPlugin = "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersionsPlugin}"
-    const val lifecycleExtenstions = "android.arch.lifecycle:extensions:${Versions.lifecycle}"
+    const val lifecycleExtenstions = "android.arch.lifecycle:extensions:${Versions.lifecycleExtensions}"
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
     const val koinAndroid = "org.koin:koin-android:${Versions.koin}"
     const val koinCore = "org.koin:koin-core:${Versions.koin}"
