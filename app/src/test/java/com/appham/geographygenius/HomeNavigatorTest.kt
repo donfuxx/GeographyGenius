@@ -1,73 +1,67 @@
 package com.appham.geographygenius
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import com.appham.geographygenius.features.home.HomeNavigationEvent
 import com.appham.geographygenius.features.home.HomeViewModel
-import io.mockk.*
-import junit.framework.Assert.assertEquals
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.spyk
+import io.mockk.verify
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 
 @ExtendWith(InstantExecutorExtension::class)
 internal class HomeNavigatorTest {
 
-    private val activity: AppCompatActivity = mockk(relaxed = true)
+    private val router: Routing = spyk(object : Routing {
+        override fun goToGame() {}
+
+        override fun <T> LiveData<T>.observe(onChange: (T) -> Unit) {
+            observeForever(onChange)
+        }
+
+    })
 
     private val homeViewModel: HomeViewModel = mockk()
 
     private val navEvents: MutableLiveData<HomeNavigationEvent> = spyk(MutableLiveData())
 
-    private val sut = HomeNavigator(activity, homeViewModel)
+    private val sut = HomeNavigator(router, homeViewModel)
 
     init {
         every { homeViewModel.getNavEvents() } returns navEvents
-//        every { activity.goToGame() } returns Unit
-    }
-
-
-    @Test
-    fun `Given init called Then observe navEvents`() {
-        sut.init()
-
-        verify { homeViewModel.getNavEvents() }
-
-        verify { navEvents.observe(activity, any())}
     }
 
     @Test
     fun `Given init called When GoToGame emitted Then call goToGame`() {
         sut.init()
 
-        val onChanged = slot<Observer<HomeNavigationEvent>>()
+        verify { homeViewModel.getNavEvents() }
 
-        verify { navEvents.observe(activity, capture(onChanged))}
+        navEvents.value = HomeNavigationEvent.GoToGame
 
-        onChanged.captured.onChanged(HomeNavigationEvent.GoToGame)
-
-//        verify { activity.startActivity(any()) }
-
-        val intent = slot<Intent>()
-
-        verify(exactly = 1) { activity.startActivity(capture(intent)) }
-
-        assertEquals(intent.captured.action, "")
-
-//        val targetActivity = slot<Class<GameActivity>>()
-//
-//        verify(exactly = 1) { activity.launchActivity(capture(targetActivity)) }
-//
-//        assertEquals(GameActivity::class.java, targetActivity)
-
-//        mockkObject(GameActivity)
-//
-//        val mockIntent: Intent = mockk()
-//        every { mockIntent.toString() } returns "GameActivity"
-//
-//        every { GameActivity.getLaunchIntent(activity) } returns mockIntent
-//
-//        verify(exactly = 1) { activity.startActivity(mockIntent) }
+        verify { router.goToGame() }
     }
+
+    @Test
+    fun `Given init called When None emitted Then don't call goToGame`() {
+        sut.init()
+
+        verify { homeViewModel.getNavEvents() }
+
+        navEvents.value = HomeNavigationEvent.None
+
+        verify (exactly = 0) { router.goToGame() }
+    }
+
+    @Test
+    fun `Given init called When no events emitted Then don't call goToGame`() {
+        sut.init()
+
+        verify { homeViewModel.getNavEvents() }
+
+        verify (exactly = 0) { router.goToGame() }
+    }
+
 }
