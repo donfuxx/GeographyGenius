@@ -20,6 +20,8 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.utils))
+
     implementations()
 
     testImplementations()

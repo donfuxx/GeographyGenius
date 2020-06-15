@@ -1,9 +1,7 @@
-package com.appham.geographygenius
+package com.appham.geographygenius.features.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.appham.geographygenius.features.home.HomeNavigationEvent
-import com.appham.geographygenius.features.home.HomeViewModel
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.spyk
@@ -14,7 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith
 @ExtendWith(InstantExecutorExtension::class)
 internal class HomeNavigatorTest {
 
-    private val router: Routing = spyk(object : Routing {
+    private val router: HomeRouting = spyk(object : HomeRouting {
         override fun goToGame() {}
 
         override fun <T> LiveData<T>.observe(onChange: (T) -> Unit) {
@@ -27,7 +25,10 @@ internal class HomeNavigatorTest {
 
     private val navEvents: MutableLiveData<HomeNavigationEvent> = spyk(MutableLiveData())
 
-    private val sut = HomeNavigator(router, homeViewModel)
+    private val sut = HomeNavigator(
+        router,
+        homeViewModel
+    )
 
     init {
         every { homeViewModel.getNavEvents() } returns navEvents

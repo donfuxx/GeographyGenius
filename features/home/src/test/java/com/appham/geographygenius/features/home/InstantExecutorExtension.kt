@@ -1,4 +1,4 @@
-package com.appham.geographygenius
+package com.appham.geographygenius.features.home
 
 import androidx.arch.core.executor.ArchTaskExecutor
 import androidx.arch.core.executor.TaskExecutor

@@ -1,5 +1,6 @@
 include(
         ":app",
+        ":common:utils",
         ":features:home",
         ":features:game"
 )

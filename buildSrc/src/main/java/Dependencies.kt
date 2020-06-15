@@ -1,4 +1,5 @@
 object Modules {
+    val utils = ":common:utils"
     val home = ":features:home"
     val game = ":features:game"
 }

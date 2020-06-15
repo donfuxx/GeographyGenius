@@ -1,25 +1,23 @@
-package com.appham.geographygenius
+package com.appham.geographygenius.features.home
 
 import androidx.appcompat.app.AppCompatActivity
-import com.appham.geographygenius.features.home.HomeNavigation
-import com.appham.geographygenius.features.home.HomeNavigationEvent
-import com.appham.geographygenius.features.home.HomeViewModel
+import org.koin.core.parameter.parametersOf
 import org.koin.dsl.module
 
 val homeNavigatorModule = module {
     single<HomeNavigation> { (activity: AppCompatActivity, homeViewModel: HomeViewModel) ->
-        HomeNavigator(Router(activity), homeViewModel)
+        HomeNavigator(get { parametersOf(activity) }, homeViewModel)
     }
 }
 
 class HomeNavigator(
-    private val router: Routing,
+    private val router: HomeRouting,
     private val homeViewModel: HomeViewModel
-) : HomeNavigation, Routing by router {
+) : HomeNavigation, HomeRouting by router {
 
     override fun init() {
         homeViewModel.getNavEvents().observe { event ->
-            when(event) {
+            when (event) {
                 is HomeNavigationEvent.GoToGame -> goToGame()
             }
         }

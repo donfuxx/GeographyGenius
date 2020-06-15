@@ -1,5 +1,6 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
+    id("kotlin-android")
 }
 
 apply {
@@ -20,10 +21,6 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.utils))
-    implementation(project(Modules.home))
-    implementation(project(Modules.game))
-
     implementations()
 
     testImplementations()
