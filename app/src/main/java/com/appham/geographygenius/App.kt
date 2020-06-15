@@ -1,8 +1,8 @@
 package com.appham.geographygenius
 
 import android.app.Application
-import com.appham.geographygenius.features.home.homeNavigatorModule
 import com.appham.geographygenius.features.home.homeViewModelModule
+import com.appham.geographygenius.features.home.nav.homeNavigatorModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

@@ -5,14 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import com.appham.geographygenius.features.game.GameActivity
-import com.appham.geographygenius.features.home.HomeRouting
+import com.appham.geographygenius.features.home.nav.HomeRouting
 import org.koin.dsl.module
 
 val routerModule = module {
     factory<HomeRouting> { (activity: AppCompatActivity) -> Router(activity) }
 }
 
-class Router(private val activity: AppCompatActivity) : HomeRouting {
+class Router(private val activity: AppCompatActivity) :
+    HomeRouting {
 
     override fun goToGame() {
         activity.startActivity(Intent(activity, GameActivity::class.java))

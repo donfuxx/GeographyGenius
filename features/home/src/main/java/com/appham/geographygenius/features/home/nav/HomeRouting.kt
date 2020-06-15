@@ -1,4 +1,4 @@
-package com.appham.geographygenius.features.home
+package com.appham.geographygenius.features.home.nav
 
 import com.appham.geographygenius.common.utils.LiveDataObserver
 
