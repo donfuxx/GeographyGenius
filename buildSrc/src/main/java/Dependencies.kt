@@ -16,6 +16,7 @@ object Versions {
     const val kotlin = "1.3.72"
     const val lifecycle = "2.2.0"
     const val lifecycleExtensions = "1.1.1"
+    const val mockk = "1.10.0"
 }
 
 object Deps {
@@ -35,6 +36,8 @@ object Deps {
 
 object TestDeps {
     const val jUnit5 = "org.junit.jupiter:junit-jupiter-api:${Versions.junit5}"
+    const val mockk = "io.mockk:mockk:${Versions.mockk}"
+    const val livecycleCoreTesting = "android.arch.core:core-testing:${Versions.lifecycleExtensions}"
 }
 
 object TestRuntimeOnly {
