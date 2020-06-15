@@ -23,7 +23,7 @@ android {
 dependencies {
     implementations()
 
-    testImplementation(TestDeps.jUnit)
+    testImplementations()
 
     androidTestImplementation(AndroidTestDeps.junitExt)
     androidTestImplementation(AndroidTestDeps.espressoCore)

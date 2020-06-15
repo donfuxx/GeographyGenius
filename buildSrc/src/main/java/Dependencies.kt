@@ -10,11 +10,13 @@ object Versions {
     const val espressoCore = "3.2.0"
     const val gradle = "4.0.0"
     const val gradleVersionsPlugin = "0.28.0"
-    const val junit = "4.12"
+    const val junit5 = "5.6.2"
     const val junitExt = "1.1.1"
     const val koin = "2.1.6"
     const val kotlin = "1.3.72"
     const val lifecycle = "2.2.0"
+    const val lifecycleExtensions = "1.1.1"
+    const val mockk = "1.10.0"
 }
 
 object Deps {
@@ -23,7 +25,7 @@ object Deps {
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val gradle = "com.android.tools.build:gradle:${Versions.gradle}"
     const val gradleVersionsPlugin = "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersionsPlugin}"
-    const val lifecycleExtenstions = "android.arch.lifecycle:extensions:${Versions.lifecycle}"
+    const val lifecycleExtenstions = "android.arch.lifecycle:extensions:${Versions.lifecycleExtensions}"
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
     const val koinAndroid = "org.koin:koin-android:${Versions.koin}"
     const val koinCore = "org.koin:koin-core:${Versions.koin}"
@@ -33,7 +35,13 @@ object Deps {
 }
 
 object TestDeps {
-    const val jUnit = "junit:junit:${Versions.junit}"
+    const val jUnit5 = "org.junit.jupiter:junit-jupiter-api:${Versions.junit5}"
+    const val mockk = "io.mockk:mockk:${Versions.mockk}"
+    const val livecycleCoreTesting = "android.arch.core:core-testing:${Versions.lifecycleExtensions}"
+}
+
+object TestRuntimeOnly {
+    const val jUnit5 = "org.junit.jupiter:junit-jupiter-engine:${Versions.junit5}"
 }
 
 object AndroidTestDeps {
