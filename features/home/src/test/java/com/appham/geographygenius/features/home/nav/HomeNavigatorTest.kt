@@ -46,8 +46,7 @@ internal class HomeNavigatorTest {
 
         verify { homeViewModel.getNavEvents() }
 
-        navEvents.value =
-            HomeNavigationEvent.GoToGame
+        navEvents.value = HomeNavigationEvent.GoToGame
 
         verify { router.goToGame() }
     }
@@ -58,8 +57,7 @@ internal class HomeNavigatorTest {
 
         verify { homeViewModel.getNavEvents() }
 
-        navEvents.value =
-            HomeNavigationEvent.None
+        navEvents.value = HomeNavigationEvent.None
 
         verify(exactly = 0) { router.goToGame() }
     }
