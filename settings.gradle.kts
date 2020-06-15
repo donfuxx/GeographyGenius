@@ -1,6 +1,6 @@
 include(
         ":app",
-        ":common:utils",
+        ":common:android",
         ":features:home",
         ":features:game"
 )

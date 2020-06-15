@@ -20,7 +20,7 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.utils))
+    implementation(project(Modules.android))
 
     implementations()
 

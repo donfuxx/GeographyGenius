@@ -1,7 +1,7 @@
 object Modules {
-    val utils = ":common:utils"
-    val home = ":features:home"
-    val game = ":features:game"
+    const val android = ":common:android"
+    const val home = ":features:home"
+    const val game = ":features:game"
 }
 
 object Versions {

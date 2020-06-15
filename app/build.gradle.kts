@@ -20,7 +20,7 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.utils))
+    implementation(project(Modules.android))
     implementation(project(Modules.home))
     implementation(project(Modules.game))
 
