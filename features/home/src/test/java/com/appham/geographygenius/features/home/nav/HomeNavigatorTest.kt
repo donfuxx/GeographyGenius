@@ -27,7 +27,7 @@ internal class HomeNavigatorTest {
 
     private val navigationController: HomeNavigation.NavigationControl = mockk()
 
-    private val navEvents: MutableLiveData<HomeNavigationEvent> = spyk(MutableLiveData())
+    private val navEvents: MutableLiveData<HomeNavigation.Event> = spyk(MutableLiveData())
 
     private val sut = HomeNavigator(
         router,
@@ -44,7 +44,7 @@ internal class HomeNavigatorTest {
 
         verify { navigationController.getNavEvents() }
 
-        navEvents.value = HomeNavigationEvent.GoToGame
+        navEvents.value = HomeNavigation.Event.GoToGame
 
         verify { router.goToGame() }
     }
@@ -55,7 +55,7 @@ internal class HomeNavigatorTest {
 
         verify { navigationController.getNavEvents() }
 
-        navEvents.value = HomeNavigationEvent.None
+        navEvents.value = HomeNavigation.Event.None
 
         verify(exactly = 0) { router.goToGame() }
     }
