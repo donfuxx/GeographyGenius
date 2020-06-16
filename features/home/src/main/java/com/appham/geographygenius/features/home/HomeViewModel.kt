@@ -2,7 +2,6 @@ package com.appham.geographygenius.features.home
 
 import androidx.lifecycle.ViewModel
 import com.appham.geographygenius.features.home.nav.HomeNavigation
-import com.appham.geographygenius.features.home.nav.HomeNavigationController
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -13,6 +12,6 @@ val homeViewModelModule = module {
 }
 
 class HomeViewModel(
-    homeNavigationController: HomeNavigationController
+    homeNavigationController: HomeNavigation.NavigationControl
 ) : ViewModel(), HomeNavigation.NavigationControl by homeNavigationController
 

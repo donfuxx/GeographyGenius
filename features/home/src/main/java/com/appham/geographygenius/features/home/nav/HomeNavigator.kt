@@ -16,16 +16,16 @@ val homeNavigatorModule = module {
             )
         }, homeViewModel)
     }
-    single { HomeNavigationController() }
+    single<HomeNavigation.NavigationControl> { HomeNavigationController() }
 }
 
 class HomeNavigator(
     private val router: HomeNavigation.Routing,
-    private val homeViewModel: HomeViewModel
+    private val navigationController: HomeNavigation.NavigationControl
 ) : HomeNavigation, HomeNavigation.Routing by router {
 
     override fun init() {
-        homeViewModel.getNavEvents().observe { event ->
+        navigationController.getNavEvents().observe { event ->
             when (event) {
                 is HomeNavigationEvent.GoToGame -> goToGame()
             }

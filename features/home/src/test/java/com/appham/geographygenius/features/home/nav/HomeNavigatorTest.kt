@@ -2,7 +2,6 @@ package com.appham.geographygenius.features.home.nav
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.appham.geographygenius.features.home.HomeViewModel
 import com.appham.geographygenius.features.home.InstantExecutorExtension
 import io.mockk.every
 import io.mockk.mockk
@@ -26,24 +25,24 @@ internal class HomeNavigatorTest {
         }
     )
 
-    private val homeViewModel: HomeViewModel = mockk()
+    private val navigationController: HomeNavigation.NavigationControl = mockk()
 
     private val navEvents: MutableLiveData<HomeNavigationEvent> = spyk(MutableLiveData())
 
     private val sut = HomeNavigator(
         router,
-        homeViewModel
+        navigationController
     )
 
     init {
-        every { homeViewModel.getNavEvents() } returns navEvents
+        every { navigationController.getNavEvents() } returns navEvents
     }
 
     @Test
     fun `Given init called When GoToGame emitted Then call goToGame`() {
         sut.init()
 
-        verify { homeViewModel.getNavEvents() }
+        verify { navigationController.getNavEvents() }
 
         navEvents.value = HomeNavigationEvent.GoToGame
 
@@ -54,7 +53,7 @@ internal class HomeNavigatorTest {
     fun `Given init called When None emitted Then don't call goToGame`() {
         sut.init()
 
-        verify { homeViewModel.getNavEvents() }
+        verify { navigationController.getNavEvents() }
 
         navEvents.value = HomeNavigationEvent.None
 
@@ -65,7 +64,7 @@ internal class HomeNavigatorTest {
     fun `Given init called When no events emitted Then don't call goToGame`() {
         sut.init()
 
-        verify { homeViewModel.getNavEvents() }
+        verify { navigationController.getNavEvents() }
 
         verify(exactly = 0) { router.goToGame() }
     }
