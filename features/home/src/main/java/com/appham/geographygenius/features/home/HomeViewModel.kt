@@ -14,5 +14,5 @@ val homeViewModelModule = module {
 
 class HomeViewModel(
     homeNavigationController: HomeNavigationController
-) : ViewModel(), HomeNavigation.HomeNavigationControl by homeNavigationController
+) : ViewModel(), HomeNavigation.NavigationControl by homeNavigationController
 

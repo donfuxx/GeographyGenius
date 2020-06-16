@@ -14,9 +14,9 @@ import org.junit.jupiter.api.extension.ExtendWith
 @ExtendWith(InstantExecutorExtension::class)
 internal class HomeNavigatorTest {
 
-    private val router: HomeNavigation.HomeRouting = spyk(
+    private val router: HomeNavigation.Routing = spyk(
         object :
-            HomeNavigation.HomeRouting {
+            HomeNavigation.Routing {
             override fun goToGame() {}
 
             override fun <T> LiveData<T>.observe(onChange: (T) -> Unit) {

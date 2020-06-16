@@ -16,12 +16,13 @@ val homeNavigatorModule = module {
             )
         }, homeViewModel)
     }
+    single { HomeNavigationController() }
 }
 
 class HomeNavigator(
-    private val router: HomeNavigation.HomeRouting,
+    private val router: HomeNavigation.Routing,
     private val homeViewModel: HomeViewModel
-) : HomeNavigation, HomeNavigation.HomeRouting by router {
+) : HomeNavigation, HomeNavigation.Routing by router {
 
     override fun init() {
         homeViewModel.getNavEvents().observe { event ->
@@ -32,11 +33,7 @@ class HomeNavigator(
     }
 }
 
-val homeNavigationControllerModule = module {
-    single { HomeNavigationController() }
-}
-
-class HomeNavigationController : HomeNavigation.HomeNavigationControl {
+class HomeNavigationController : HomeNavigation.NavigationControl {
     private val navEvents: MutableLiveData<HomeNavigationEvent> = MutableLiveData()
 
     override fun getNavEvents(): LiveData<HomeNavigationEvent> = navEvents
@@ -54,13 +51,13 @@ sealed class HomeNavigationEvent {
 interface HomeNavigation {
     fun init()
 
-    interface HomeNavigationControl {
+    interface NavigationControl {
         fun getNavEvents(): LiveData<HomeNavigationEvent>
 
         fun onGoToGame()
     }
 
-    interface HomeRouting: LiveDataObserver {
+    interface Routing: LiveDataObserver {
         fun goToGame()
     }
 }

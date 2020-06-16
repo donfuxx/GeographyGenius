@@ -10,10 +10,10 @@ import org.koin.dsl.module
 import java.lang.ref.WeakReference
 
 val routerModule = module {
-    factory<HomeNavigation.HomeRouting> { (activity: AppCompatActivity) -> Router(activity) }
+    factory<HomeNavigation.Routing> { (activity: AppCompatActivity) -> Router(activity) }
 }
 
-class Router(activity: AppCompatActivity) : HomeNavigation.HomeRouting {
+class Router(activity: AppCompatActivity) : HomeNavigation.Routing {
 
     private val activityRef: WeakReference<AppCompatActivity> = WeakReference(activity)
 
