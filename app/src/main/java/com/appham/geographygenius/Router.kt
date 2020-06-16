@@ -5,15 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import com.appham.geographygenius.features.game.GameActivity
-import com.appham.geographygenius.features.home.nav.HomeRouting
+import com.appham.geographygenius.features.home.nav.HomeNavigation
 import org.koin.dsl.module
 import java.lang.ref.WeakReference
 
 val routerModule = module {
-    factory<HomeRouting> { (activity: AppCompatActivity) -> Router(activity) }
+    factory<HomeNavigation.HomeRouting> { (activity: AppCompatActivity) -> Router(activity) }
 }
 
-class Router(activity: AppCompatActivity) : HomeRouting {
+class Router(activity: AppCompatActivity) : HomeNavigation.HomeRouting {
 
     private val activityRef: WeakReference<AppCompatActivity> = WeakReference(activity)
 

@@ -2,6 +2,7 @@ package com.appham.geographygenius.features.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.appham.geographygenius.features.home.nav.HomeNavigation
 import kotlinx.android.synthetic.main.activity_home.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel

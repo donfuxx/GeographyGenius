@@ -2,6 +2,7 @@ package com.appham.geographygenius
 
 import android.app.Application
 import com.appham.geographygenius.features.home.homeViewModelModule
+import com.appham.geographygenius.features.home.nav.homeNavigationControllerModule
 import com.appham.geographygenius.features.home.nav.homeNavigatorModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -15,7 +16,7 @@ class App : Application() {
             androidLogger()
             androidContext(this@App)
             modules(listOf(homeViewModelModule,
-                homeNavigatorModule, routerModule))
+                homeNavigatorModule, routerModule, homeNavigationControllerModule))
         }
     }
 }
