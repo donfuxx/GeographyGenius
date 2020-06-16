@@ -47,7 +47,7 @@ interface HomeNavigation {
     fun init()
 
     interface NavigationControl {
-        fun getNavEvents(): LiveData<Event>
+        fun getNavEvents(): LiveData<Event> // TODO use SingleLiveEvent
 
         fun onGoToGame()
     }

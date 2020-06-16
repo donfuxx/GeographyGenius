@@ -1,3 +1,4 @@
+include(":common:testutils")
 include(
         ":app",
         ":common:android",

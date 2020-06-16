@@ -2,7 +2,7 @@ package com.appham.geographygenius.features.home.nav
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.appham.geographygenius.features.home.InstantExecutorExtension
+import com.appham.geographygenius.common.testutils.InstantExecutorExtension
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.spyk

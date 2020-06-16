@@ -1,5 +1,6 @@
 object Modules {
     const val android = ":common:android"
+    const val testUtils = ":common:testutils"
     const val home = ":features:home"
     const val game = ":features:game"
 }

@@ -1,5 +1,6 @@
 plugins {
     id("com.android.library")
+    id("kotlin-android")
 }
 
 apply {
@@ -20,12 +21,6 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.android))
-    implementations()
-
-    testImplementation(project(Modules.testUtils))
-    testImplementations()
-
-    androidTestImplementation(AndroidTestDeps.junitExt)
-    androidTestImplementation(AndroidTestDeps.espressoCore)
+    implementation(TestDeps.livecycleCoreTesting)
+    implementation(TestDeps.jUnit5)
 }
