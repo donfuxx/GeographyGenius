@@ -19,6 +19,7 @@ object Versions {
     const val lifecycle = "2.2.0"
     const val lifecycleExtensions = "1.1.1"
     const val mockk = "1.10.0"
+    const val materialDesign = "1.1.0"
 }
 
 object Deps {
@@ -34,6 +35,7 @@ object Deps {
     const val koinViewModel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+    const val materialDesign = "com.google.android.material:material:${Versions.materialDesign}"
 }
 
 object TestDeps {

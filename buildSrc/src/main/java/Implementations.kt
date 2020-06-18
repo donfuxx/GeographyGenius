@@ -9,6 +9,7 @@ fun DependencyHandler.implementations() {
     implementation(Deps.koinAndroid)
     implementation(Deps.koinCore)
     implementation(Deps.koinViewModel)
+    implementation(Deps.materialDesign)
 }
 
 fun DependencyHandler.testImplementations() {
