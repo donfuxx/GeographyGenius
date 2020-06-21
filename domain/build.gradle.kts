@@ -1,6 +1,5 @@
 plugins {
     id("com.android.library")
-    id("kotlin-android")
 }
 
 apply {
@@ -21,9 +20,9 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.domain))
     implementations()
 
+    testImplementation(project(Modules.testUtils))
     testImplementations()
 
     androidTestImplementation(AndroidTestDeps.junitExt)

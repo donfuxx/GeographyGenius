@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/common/android" />
             <option value="$PROJECT_DIR$/common/testutils" />
+            <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/game" />
             <option value="$PROJECT_DIR$/features/home" />

@@ -1,7 +1,8 @@
-include(":common:testutils")
 include(
         ":app",
+        ":domain",
         ":common:android",
+        ":common:testutils",
         ":features:home",
         ":features:game"
 )
