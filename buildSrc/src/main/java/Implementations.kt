@@ -19,6 +19,13 @@ fun DependencyHandler.testImplementations() {
     testImplementation(TestDeps.livecycleCoreTesting)
 }
 
+fun DependencyHandler.networkImplementations() {
+    implementation(Deps.okhttpLoggingInterceptor)
+    implementation(Deps.retrofit)
+    implementation(Deps.retrofitMoshi)
+    implementation(Deps.retrofitCoroutines)
+}
+
 private fun DependencyHandler.implementation(dependency: String) = add("implementation", dependency)
 private fun DependencyHandler.testImplementation(dependency: String) = add("testImplementation", dependency)
 private fun DependencyHandler.testRuntimeOnly(dependency: String) = add("testRuntimeOnly", dependency)
