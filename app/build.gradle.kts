@@ -22,8 +22,9 @@ android {
 dependencies {
     implementation(project(Modules.android))
     implementation(project(Modules.domain))
-    implementation(project(Modules.home))
     implementation(project(Modules.game))
+    implementation(project(Modules.home))
+    implementation(project(Modules.network))
 
     implementations()
 

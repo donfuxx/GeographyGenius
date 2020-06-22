@@ -1,5 +1,6 @@
 object Modules {
     const val domain = ":domain"
+    const val network = ":network"
     const val android = ":common:android"
     const val testUtils = ":common:testutils"
     const val home = ":features:home"
