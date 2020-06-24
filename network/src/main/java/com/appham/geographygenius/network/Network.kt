@@ -14,6 +14,9 @@ val networkModule = module {
     single {
         (debug: Boolean) -> httpClient(debug)
     }
+    single<PlacesApi> {
+        (retrofit: Retrofit) -> retrofit.create(PlacesApi::class.java)
+    }
 }
 
 private fun httpClient(debug: Boolean): OkHttpClient {
@@ -28,9 +31,10 @@ private fun httpClient(debug: Boolean): OkHttpClient {
     return clientBuilder.build()
 }
 
-private fun retrofitClient(baseUrl: String, httpClient: OkHttpClient): Retrofit.Builder =
+private fun retrofitClient(baseUrl: String, httpClient: OkHttpClient): Retrofit =
     Retrofit.Builder()
         .baseUrl(baseUrl)
         .client(httpClient)
         .addConverterFactory(MoshiConverterFactory.create())
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
+        .build()
