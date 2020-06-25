@@ -1,6 +1,6 @@
 package com.appham.geographygenius.network
 
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.appham.geographygenius.domain.entities.PlacesRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -9,13 +9,16 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 val networkModule = module {
     single {
-        (baseUrl: String, httpClient: OkHttpClient) -> retrofitClient(baseUrl, httpClient)
+            retrofitClient("https://donfuxx.github.io/GeographyGenius/", httpClient(BuildConfig.DEBUG))
     }
     single {
         (debug: Boolean) -> httpClient(debug)
     }
     single<PlacesApi> {
-        (retrofit: Retrofit) -> retrofit.create(PlacesApi::class.java)
+        get<Retrofit>().create(PlacesApi::class.java)
+    }
+    single<PlacesRepository> {
+        PlacesRemoteDataSource(get())
     }
 }
 
@@ -36,5 +39,4 @@ private fun retrofitClient(baseUrl: String, httpClient: OkHttpClient): Retrofit 
         .baseUrl(baseUrl)
         .client(httpClient)
         .addConverterFactory(MoshiConverterFactory.create())
-        .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .build()

@@ -23,7 +23,6 @@ fun DependencyHandler.networkImplementations() {
     implementation(Deps.okhttpLoggingInterceptor)
     implementation(Deps.retrofit)
     implementation(Deps.retrofitMoshi)
-    implementation(Deps.retrofitCoroutines)
 }
 
 private fun DependencyHandler.implementation(dependency: String) = add("implementation", dependency)

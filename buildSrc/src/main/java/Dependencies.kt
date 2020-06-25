@@ -24,7 +24,6 @@ object Versions {
     const val materialDesign = "1.1.0"
     const val okhttp = "4.7.2"
     const val retrofit = "2.9.0"
-    const val retrofitCoroutines = "0.9.2"
 }
 
 object Deps {
@@ -43,7 +42,6 @@ object Deps {
     const val okhttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
     const val materialDesign = "com.google.android.material:material:${Versions.materialDesign}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
-    const val retrofitCoroutines = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofitCoroutines}"
     const val retrofitMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
 }
 
