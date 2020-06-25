@@ -4,17 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.appham.geographygenius.common.utils.LiveDataObserver
-import com.appham.geographygenius.features.home.HomeViewModel
 import org.koin.core.parameter.parametersOf
 import org.koin.dsl.module
 
 val homeNavigatorModule = module {
-    single<HomeNavigation> { (activity: AppCompatActivity, homeViewModel: HomeViewModel) ->
+    single<HomeNavigation> { (activity: AppCompatActivity) ->
         HomeNavigator(get {
             parametersOf(
                 activity
             )
-        }, homeViewModel)
+        }, get())
     }
     single<HomeNavigation.NavigationControl> { HomeNavigationController() }
 }

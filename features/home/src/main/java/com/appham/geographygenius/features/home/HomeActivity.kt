@@ -12,7 +12,7 @@ class HomeActivity : AppCompatActivity() {
 
     private val homeViewModel: HomeViewModel by viewModel()
 
-    private val homeNavigator: HomeNavigation by inject { parametersOf(this, homeViewModel) }
+    private val homeNavigator: HomeNavigation by inject { parametersOf(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
