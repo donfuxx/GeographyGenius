@@ -1,8 +1,8 @@
 package com.appham.geographygenius.features.game
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.appham.geographygenius.domain.entities.PlacesRepository
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -18,7 +18,7 @@ class GameViewModel (
 ): ViewModel() {
 
     fun loadPlaces() {
-        GlobalScope.launch {
+        viewModelScope.launch {
             placesRepository.getPlaces()
         }
     }
