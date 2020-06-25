@@ -1,24 +1,22 @@
-{
-  "places": [
-    {
-      "id": "L",
-      "name": "London",
-      "type": "CITY",
-      "coords": {
-        "lat": 51.528308,
-        "lng": -0.3817765
-      },
-      "country": "GB"
+[
+  {
+    "id": "L",
+    "name": "London",
+    "type": "CITY",
+    "coords": {
+      "lat": 51.528308,
+      "lng": -0.3817765
     },
-    {
-      "id": "B",
-      "name": "Barcelona",
-      "type": "CITY",
-      "coords": {
-        "lat": 41.3947687,
-        "lng": 2.0785559
-      },
-      "country": "ES"
-    }
-  ]
-}
+    "country": "GB"
+  },
+  {
+    "id": "B",
+    "name": "Barcelona",
+    "type": "CITY",
+    "coords": {
+      "lat": 41.3947687,
+      "lng": 2.0785559
+    },
+    "country": "ES"
+  }
+]
