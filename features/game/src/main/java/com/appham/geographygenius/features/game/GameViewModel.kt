@@ -2,7 +2,7 @@ package com.appham.geographygenius.features.game
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.appham.geographygenius.domain.entities.PlacesRepository
+import com.appham.geographygenius.domain.entities.GetPlacesQuizUseCase
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -14,12 +14,12 @@ val gameViewModelModule = module {
 }
 
 class GameViewModel (
-    private val placesRepository: PlacesRepository
+    private val getPlacesQuizUseCase: GetPlacesQuizUseCase
 ): ViewModel() {
 
     fun loadPlaces() {
         viewModelScope.launch {
-            placesRepository.getPlaces()
+            getPlacesQuizUseCase.execute()
         }
     }
 
