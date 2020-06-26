@@ -10,12 +10,32 @@
     "country": "GB"
   },
   {
+    "id": "P",
+    "name": "Paris",
+    "type": "CITY",
+    "coords": {
+      "lat": 48.8588376,
+      "lng": 2.2768482
+    },
+    "country": "FR"
+  },
+  {
     "id": "B",
     "name": "Barcelona",
     "type": "CITY",
     "coords": {
       "lat": 41.3947687,
       "lng": 2.0785559
+    },
+    "country": "ES"
+  },
+  {
+    "id": "M",
+    "name": "Madrid",
+    "type": "CITY",
+    "coords": {
+      "lat": 40.4378693,
+      "lng": -3.8199656
     },
     "country": "ES"
   }
