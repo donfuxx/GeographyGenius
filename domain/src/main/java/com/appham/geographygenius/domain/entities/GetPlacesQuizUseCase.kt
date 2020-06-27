@@ -1,5 +1,13 @@
 package com.appham.geographygenius.domain.entities
 
+import org.koin.dsl.module
+
+val getPlacesQuizUseCaseModule = module {
+    single {
+        GetPlacesQuizUseCase(get())
+    }
+}
+
 class GetPlacesQuizUseCase(
     private val placesRepository: PlacesRepository
 ) {

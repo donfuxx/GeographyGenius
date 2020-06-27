@@ -1,6 +1,7 @@
 package com.appham.geographygenius
 
 import android.app.Application
+import com.appham.geographygenius.domain.entities.getPlacesQuizUseCaseModule
 import com.appham.geographygenius.features.game.gameViewModelModule
 import com.appham.geographygenius.features.home.homeViewModelModule
 import com.appham.geographygenius.features.home.nav.homeNavigatorModule
@@ -16,7 +17,7 @@ class App : Application() {
         startKoin{
             androidLogger()
             androidContext(this@App)
-            modules(listOf(homeViewModelModule, gameViewModelModule,
+            modules(listOf(homeViewModelModule, gameViewModelModule, getPlacesQuizUseCaseModule,
                 homeNavigatorModule, networkModule, routerModule))
         }
     }
