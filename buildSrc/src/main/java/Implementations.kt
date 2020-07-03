@@ -4,6 +4,7 @@ fun DependencyHandler.implementations() {
     implementation(Deps.coreKtx)
     implementation(Deps.appCompat)
     implementation(Deps.constraintLayout)
+    implementation(Deps.googleMaps)
     implementation(Deps.lifecycleExtenstions)
     implementation(Deps.lifecycleViewModel)
     implementation(Deps.koinAndroid)
