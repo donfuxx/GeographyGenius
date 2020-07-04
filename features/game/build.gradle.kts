@@ -17,6 +17,12 @@ android {
                 "proguard-rules.pro"
             )
         }
+
+        getByName("debug") {
+            isMinifyEnabled = false
+
+            manifestPlaceholders = mapOf(Secrets.GOOGLE_MAPS_DEBUG_KEY to Secrets.googleMapsDebugKey)
+        }
     }
 }
 
