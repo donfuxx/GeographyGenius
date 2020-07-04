@@ -23,6 +23,7 @@ android {
 dependencies {
     implementation(project(Modules.domain))
     implementations()
+    mapImplementations()
 
     testImplementations()
 

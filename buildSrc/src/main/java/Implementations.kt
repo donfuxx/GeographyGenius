@@ -4,7 +4,6 @@ fun DependencyHandler.implementations() {
     implementation(Deps.coreKtx)
     implementation(Deps.appCompat)
     implementation(Deps.constraintLayout)
-    implementation(Deps.googleMaps)
     implementation(Deps.lifecycleExtenstions)
     implementation(Deps.lifecycleViewModel)
     implementation(Deps.koinAndroid)
@@ -24,6 +23,10 @@ fun DependencyHandler.networkImplementations() {
     implementation(Deps.okhttpLoggingInterceptor)
     implementation(Deps.retrofit)
     implementation(Deps.retrofitMoshi)
+}
+
+fun DependencyHandler.mapImplementations() {
+    implementation(Deps.googleMaps)
 }
 
 private fun DependencyHandler.implementation(dependency: String) = add("implementation", dependency)
