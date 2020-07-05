@@ -21,6 +21,6 @@ android {
 }
 
 dependencies {
-    implementation(TestDeps.livecycleCoreTesting)
+    implementation(TestDeps.lifecycleCoreTesting)
     implementation(TestDeps.jUnit5)
 }

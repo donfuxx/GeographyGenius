@@ -35,6 +35,7 @@ object Deps {
     const val gradle = "com.android.tools.build:gradle:${Versions.gradle}"
     const val gradleVersionsPlugin = "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersionsPlugin}"
     const val lifecycleExtenstions = "android.arch.lifecycle:extensions:${Versions.lifecycleExtensions}"
+    const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
     const val koinAndroid = "org.koin:koin-android:${Versions.koin}"
     const val koinCore = "org.koin:koin-core:${Versions.koin}"
@@ -50,7 +51,7 @@ object Deps {
 object TestDeps {
     const val jUnit5 = "org.junit.jupiter:junit-jupiter-api:${Versions.junit5}"
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
-    const val livecycleCoreTesting = "android.arch.core:core-testing:${Versions.lifecycleExtensions}"
+    const val lifecycleCoreTesting = "android.arch.core:core-testing:${Versions.lifecycleExtensions}"
 }
 
 object TestRuntimeOnly {
