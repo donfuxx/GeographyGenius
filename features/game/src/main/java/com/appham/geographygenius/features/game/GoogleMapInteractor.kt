@@ -9,7 +9,6 @@ import com.google.android.gms.maps.model.MarkerOptions
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
-
 class GoogleMapInteractor(
     private val map: GoogleMap
 ): MapInteractor {

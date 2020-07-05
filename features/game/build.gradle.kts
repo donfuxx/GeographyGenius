@@ -27,6 +27,7 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.android))
     implementation(project(Modules.domain))
     implementations()
     mapImplementations()

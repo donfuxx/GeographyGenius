@@ -4,10 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
+import com.appham.geographygenius.common.utils.withScope
 import kotlinx.android.synthetic.main.activity_game.*
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class GameActivity : AppCompatActivity() {
@@ -28,11 +28,9 @@ class GameActivity : AppCompatActivity() {
 
         gameViewModel.getPlacesQuiz().observe(this, Observer { placesQuiz ->
             place_text.text = placesQuiz.placeToGuess.name
-            lifecycleScope.launch {
-                mapInteractor.await().apply {
-                    addMarker(placesQuiz.placeToGuess.coords, placesQuiz.placeToGuess.name)
-                    moveCamera(placesQuiz.placeToGuess.coords)
-                }
+            mapInteractor.withScope(lifecycleScope) {
+                addMarker(placesQuiz.placeToGuess.coords, placesQuiz.placeToGuess.name)
+                moveCamera(placesQuiz.placeToGuess.coords)
             }
         })
 
