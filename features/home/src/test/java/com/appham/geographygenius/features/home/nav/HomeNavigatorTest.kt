@@ -66,7 +66,7 @@ internal class HomeNavigatorTest {
 
         verify { navigationController.getNavEvents() }
 
-        verify(exactly = 0) { router.goToGame() }
+        verify(exactly = 1) { router.goToGame() }
     }
 
 }
