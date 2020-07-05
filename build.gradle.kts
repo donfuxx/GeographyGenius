@@ -11,6 +11,7 @@ buildscript {
         classpath(Deps.gradle)
         classpath(Deps.kotlinGradlePlugin)
         classpath(Deps.gradleVersionsPlugin)
+        classpath(TestDeps.junit5GradlePlugin)
     }
 }
 
