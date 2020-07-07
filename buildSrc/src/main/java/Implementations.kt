@@ -14,6 +14,7 @@ fun DependencyHandler.implementations() {
 }
 
 fun DependencyHandler.testImplementations() {
+    testImplementation(TestDeps.coroutinesTest)
     testImplementation(TestDeps.jUnit5)
     testRuntimeOnly(TestRuntimeOnly.jUnit5)
     testImplementation(TestDeps.mockk)

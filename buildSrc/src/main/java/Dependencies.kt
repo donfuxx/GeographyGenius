@@ -10,6 +10,7 @@ object Modules {
 object Versions {
     const val appCompat = "1.1.0"
     const val constraintLayout = "1.1.3"
+    const val coroutinesTest = "1.3.7"
     const val coreKtx = "1.3.0"
     const val googleMaps = "17.0.0"
     const val espressoCore = "3.2.0"
@@ -50,6 +51,7 @@ object Deps {
 }
 
 object TestDeps {
+    const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
     const val junit5GradlePlugin = "de.mannodermaus.gradle.plugins:android-junit5:${Versions.junit5GradlePlugin}"
     const val jUnit5 = "org.junit.jupiter:junit-jupiter-api:${Versions.junit5}"
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
