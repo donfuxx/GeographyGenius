@@ -13,3 +13,4 @@ A quiz app that aims to train geography skills in a fun way. WORK IN PROGRESS!
  * Android ViewModel
  * Koin dependency injection
  * Retrofit2 for REST api calls and Moshi for Json parsing
+ * Use assertJ or try https://github.com/kotest/kotest ?
