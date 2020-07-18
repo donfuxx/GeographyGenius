@@ -21,6 +21,7 @@ android {
 
 dependencies {
     implementations()
+    implementation(project(Modules.android))
 
     testImplementation(project(Modules.testUtils))
     testImplementations()
