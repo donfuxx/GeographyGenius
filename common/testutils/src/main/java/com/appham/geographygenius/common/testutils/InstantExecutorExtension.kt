@@ -5,7 +5,11 @@ import androidx.arch.core.executor.ArchTaskExecutor
 import androidx.arch.core.executor.TaskExecutor
 import org.junit.jupiter.api.extension.AfterEachCallback
 import org.junit.jupiter.api.extension.BeforeEachCallback
+import org.junit.jupiter.api.extension.ExtendWith
 import org.junit.jupiter.api.extension.ExtensionContext
+
+@ExtendWith(InstantExecutorExtension::class)
+interface LiveDataTest
 
 class InstantExecutorExtension : BeforeEachCallback, AfterEachCallback {
 

@@ -2,16 +2,14 @@ package com.appham.geographygenius.features.home.nav
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.appham.geographygenius.common.testutils.InstantExecutorExtension
+import com.appham.geographygenius.common.testutils.LiveDataTest
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.spyk
 import io.mockk.verify
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
 
-@ExtendWith(InstantExecutorExtension::class)
-internal class HomeNavigatorTest {
+internal class HomeNavigatorTest : LiveDataTest {
 
     private val router: HomeNavigation.Routing = spyk(
         object :
