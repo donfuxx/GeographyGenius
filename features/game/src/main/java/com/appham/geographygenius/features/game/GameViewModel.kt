@@ -8,7 +8,6 @@ import com.appham.geographygenius.common.utils.CoroutineContextProvider
 import com.appham.geographygenius.domain.entities.GetPlacesQuizUseCase
 import com.appham.geographygenius.domain.entities.PlacesQuiz
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -18,20 +17,18 @@ val gameViewModelModule = module {
     }
 }
 
-class GameViewModel (
+class GameViewModel(
     private val getPlacesQuizUseCase: GetPlacesQuizUseCase,
     private val contextProvider: CoroutineContextProvider
-): ViewModel() {
+) : ViewModel() {
 
     private val placesQuiz: MutableLiveData<PlacesQuiz> = MutableLiveData()
 
     fun getPlacesQuiz(): LiveData<PlacesQuiz> = placesQuiz
 
     fun loadPlaces() {
-        viewModelScope.launch {
-            withContext(contextProvider.io) {
-                placesQuiz.postValue(getPlacesQuizUseCase.execute())
-            }
+        viewModelScope.launch(contextProvider.io) {
+            placesQuiz.postValue(getPlacesQuizUseCase.execute())
         }
     }
 
