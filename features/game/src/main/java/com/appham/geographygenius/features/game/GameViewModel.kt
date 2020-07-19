@@ -4,20 +4,23 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.appham.geographygenius.common.utils.CoroutineContextProvider
 import com.appham.geographygenius.domain.entities.GetPlacesQuizUseCase
 import com.appham.geographygenius.domain.entities.PlacesQuiz
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val gameViewModelModule = module {
     viewModel {
-        GameViewModel(get())
+        GameViewModel(get(), get())
     }
 }
 
 class GameViewModel (
-    private val getPlacesQuizUseCase: GetPlacesQuizUseCase
+    private val getPlacesQuizUseCase: GetPlacesQuizUseCase,
+    private val contextProvider: CoroutineContextProvider
 ): ViewModel() {
 
     private val placesQuiz: MutableLiveData<PlacesQuiz> = MutableLiveData()
@@ -26,7 +29,9 @@ class GameViewModel (
 
     fun loadPlaces() {
         viewModelScope.launch {
-            placesQuiz.postValue(getPlacesQuizUseCase.execute())
+            withContext(contextProvider.io) {
+                placesQuiz.postValue(getPlacesQuizUseCase.execute())
+            }
         }
     }
 

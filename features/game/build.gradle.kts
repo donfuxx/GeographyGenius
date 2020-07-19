@@ -32,6 +32,7 @@ dependencies {
     implementations()
     mapImplementations()
 
+    testImplementation(project(Modules.testUtils))
     testImplementations()
 
     androidTestImplementation(AndroidTestDeps.junitExt)
