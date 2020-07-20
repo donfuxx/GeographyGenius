@@ -17,6 +17,9 @@ fun DependencyHandler.testImplementations() {
     testImplementation(TestDeps.coroutinesTest)
     testImplementation(TestDeps.jUnit5)
     testRuntimeOnly(TestRuntimeOnly.jUnit5)
+    testImplementation(TestDeps.koTest)
+    testImplementation(TestDeps.koTestAssertions)
+    testImplementation(TestDeps.koTestProperty)
     testImplementation(TestDeps.mockk)
     testImplementation(TestDeps.lifecycleCoreTesting)
 }

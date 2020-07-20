@@ -37,6 +37,10 @@ tasks.withType<com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }

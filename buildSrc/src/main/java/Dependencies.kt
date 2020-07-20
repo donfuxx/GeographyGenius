@@ -20,6 +20,7 @@ object Versions {
     const val junit5 = "5.6.2"
     const val junitExt = "1.1.1"
     const val koin = "2.1.6"
+    const val koTest = "4.1.2"
     const val kotlin = "1.3.72"
     const val lifecycle = "2.2.0"
     const val lifecycleExtensions = "1.1.1"
@@ -54,6 +55,9 @@ object TestDeps {
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
     const val junit5GradlePlugin = "de.mannodermaus.gradle.plugins:android-junit5:${Versions.junit5GradlePlugin}"
     const val jUnit5 = "org.junit.jupiter:junit-jupiter-api:${Versions.junit5}"
+    const val koTest = "io.kotest:kotest-runner-junit5-jvm:${Versions.koTest}"
+    const val koTestAssertions = "io.kotest:kotest-assertions-core-jvm:${Versions.koTest}"
+    const val koTestProperty = "io.kotest:kotest-property-jvm:${Versions.koTest}"
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
     const val lifecycleCoreTesting = "android.arch.core:core-testing:${Versions.lifecycleExtensions}"
 }
