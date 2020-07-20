@@ -44,4 +44,18 @@ internal class GameViewModelTest : CoroutineTest, LiveDataTest {
             state.placesQuiz shouldBe expectedPlacesQuiz
         }
     }
+
+    @Test
+    fun `When loadPlaces with error Then post error`() {
+        val error = Throwable("error")
+        coEvery { getPlacesQuizUseCase.execute() } throws error
+
+        sut.loadPlaces()
+
+        sut.getPlacesQuiz().observeForever {state: GameViewState ->
+            state.shouldBeTypeOf<GameViewState.Error>()
+            state as GameViewState.Error
+            state.throwable shouldBe error
+        }
+    }
 }
