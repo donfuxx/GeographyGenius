@@ -52,7 +52,7 @@ internal class GameViewModelTest : CoroutineTest, LiveDataTest {
 
         sut.loadPlaces()
 
-        sut.getPlacesQuiz().observeForever { state -> 
+        sut.getPlacesQuiz().observeForever { state ->
             state.shouldBeTypeOf<GameViewState.Error>()
             state as GameViewState.Error
             state.throwable shouldBe error
