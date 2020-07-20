@@ -7,8 +7,11 @@ import androidx.lifecycle.viewModelScope
 import com.appham.geographygenius.common.utils.CoroutineContextProvider
 import com.appham.geographygenius.domain.entities.GetPlacesQuizUseCase
 import com.appham.geographygenius.domain.entities.PlacesQuiz
+import com.appham.geographygenius.features.game.GameViewState.Error
 import com.appham.geographygenius.features.game.GameViewState.Success
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -25,11 +28,17 @@ class GameViewModel(
 
     private val placesQuiz: MutableLiveData<GameViewState> = MutableLiveData()
 
+    private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
+        placesQuiz.value = Error(throwable)
+    }
+
     fun getPlacesQuiz(): LiveData<GameViewState> = placesQuiz
 
     fun loadPlaces() {
-        viewModelScope.launch(contextProvider.io) {
-            placesQuiz.postValue(Success(getPlacesQuizUseCase.execute()))
+        viewModelScope.launch(exceptionHandler) {
+            withContext(contextProvider.io) {
+                placesQuiz.postValue(Success(getPlacesQuizUseCase.execute()))
+            }
         }
     }
 }
