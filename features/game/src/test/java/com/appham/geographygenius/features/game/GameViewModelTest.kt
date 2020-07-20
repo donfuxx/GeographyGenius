@@ -6,6 +6,7 @@ import com.appham.geographygenius.common.testutils.TestContextProvider
 import com.appham.geographygenius.domain.entities.GetPlacesQuizUseCase
 import com.appham.geographygenius.domain.entities.PlacesQuiz
 import io.kotest.matchers.shouldBe
+import io.kotest.matchers.types.shouldBeTypeOf
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -37,8 +38,10 @@ internal class GameViewModelTest : CoroutineTest, LiveDataTest {
 
         sut.loadPlaces()
 
-        sut.getPlacesQuiz().observeForever { actualPlacesQuiz ->
-            actualPlacesQuiz shouldBe expectedPlacesQuiz
+        sut.getPlacesQuiz().observeForever { state: GameViewState ->
+            state.shouldBeTypeOf<GameViewState.Success>()
+            state as GameViewState.Success
+            state.placesQuiz shouldBe expectedPlacesQuiz
         }
     }
 }
