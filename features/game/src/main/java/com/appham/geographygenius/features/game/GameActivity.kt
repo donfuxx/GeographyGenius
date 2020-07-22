@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import com.appham.geographygenius.common.utils.lazyWithScope
 import com.appham.geographygenius.common.utils.withScope
 import com.appham.geographygenius.domain.entities.PlacesQuiz
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_game.*
 import kotlinx.coroutines.Deferred
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -28,6 +29,7 @@ class GameActivity : AppCompatActivity() {
         gameViewModel.getPlacesQuiz().observe(this, Observer { state ->
             when (state) {
                 is GameViewState.Success -> updateMap(state.placesQuiz)
+                is GameViewState.Error -> Snackbar.make(map_view, state.throwable.localizedMessage.orEmpty(), Snackbar.LENGTH_LONG).show()
             }
         })
 
