@@ -28,6 +28,7 @@ class GameActivity : AppCompatActivity() {
 
         gameViewModel.getPlacesQuiz().observe(this, Observer { state ->
             when (state) {
+                is GameViewState.Loading -> showLoading()
                 is GameViewState.Success -> updateMap(state.placesQuiz)
                 is GameViewState.Error -> map_view.showSnackbar(state.throwable.localizedMessage.orEmpty())
             }
@@ -36,12 +37,17 @@ class GameActivity : AppCompatActivity() {
         map_view.onCreate(savedInstanceState)
     }
 
+    private fun showLoading() {
+        map_view_container.startShimmer()
+    }
+
     private fun updateMap(placesQuiz: PlacesQuiz) {
         place_text.text = placesQuiz.placeToGuess.name
         mapInteractor.withScope(lifecycleScope) {
             addMarker(placesQuiz.placeToGuess.coords, placesQuiz.placeToGuess.name)
             moveCamera(placesQuiz.placeToGuess.coords)
         }
+        map_view_container.hideShimmer()
     }
 
 }

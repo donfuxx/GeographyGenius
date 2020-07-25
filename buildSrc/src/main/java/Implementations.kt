@@ -11,6 +11,7 @@ fun DependencyHandler.implementations() {
     implementation(Deps.koinCore)
     implementation(Deps.koinViewModel)
     implementation(Deps.materialDesign)
+    implementation(Deps.shimmer)
 }
 
 fun DependencyHandler.testImplementations() {

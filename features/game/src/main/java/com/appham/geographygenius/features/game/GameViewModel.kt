@@ -35,6 +35,7 @@ class GameViewModel(
     fun getPlacesQuiz(): LiveData<GameViewState> = placesQuiz
 
     fun loadPlaces() {
+        placesQuiz.value = GameViewState.Loading
         viewModelScope.launch(exceptionHandler) {
             withContext(contextProvider.io) {
                 placesQuiz.postValue(Success(getPlacesQuizUseCase.execute()))

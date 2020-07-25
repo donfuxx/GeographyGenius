@@ -12,23 +12,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:layout_constraintBottom_toTopOf="@id/map_view"
+        app:layout_constraintBottom_toTopOf="@id/map_view_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/map_view"
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/map_view_container"
         android:layout_width="0dp"
         android:layout_height="300dp"
-        android:layout_margin="10dp"
+        app:shimmer_auto_start="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/place_text"
-        map:liteMode="true"
-        map:mapType="satellite"
-        map:cameraZoom="6"
-        />
+        app:layout_constraintTop_toBottomOf="@id/place_text">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            map:liteMode="true"
+            map:mapType="satellite"
+            map:cameraZoom="6"
+            />
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

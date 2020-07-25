@@ -28,6 +28,7 @@ object Versions {
     const val materialDesign = "1.1.0"
     const val okhttp = "4.7.2"
     const val retrofit = "2.9.0"
+    const val shimmer = "0.5.0"
 }
 
 object Deps {
@@ -49,6 +50,7 @@ object Deps {
     const val materialDesign = "com.google.android.material:material:${Versions.materialDesign}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val retrofitMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
+    const val shimmer = "com.facebook.shimmer:shimmer:${Versions.shimmer}"
 }
 
 object TestDeps {
