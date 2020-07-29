@@ -1,0 +1,164 @@
+{
+  "cities": [
+    {
+      "geonameid": 2643743,
+      "latitude": "51.50853",
+      "longitude": "-0.12574",
+      "name": "London",
+      "population": 7556900,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2655603,
+      "latitude": "52.48142",
+      "longitude": "-1.89983",
+      "name": "Birmingham",
+      "population": 984333,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2644210,
+      "latitude": "53.41058",
+      "longitude": "-2.97794",
+      "name": "Liverpool",
+      "population": 864122,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2641170,
+      "latitude": "52.9536",
+      "longitude": "-1.15047",
+      "name": "Nottingham",
+      "population": 729977,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2638077,
+      "latitude": "53.38297",
+      "longitude": "-1.4659",
+      "name": "Sheffield",
+      "population": 685368,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2654675,
+      "latitude": "51.45523",
+      "longitude": "-2.59665",
+      "name": "Bristol",
+      "population": 617280,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2648579,
+      "latitude": "55.86515",
+      "longitude": "-4.25763",
+      "name": "Glasgow",
+      "population": 591620,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2644668,
+      "latitude": "52.6386",
+      "longitude": "-1.13169",
+      "name": "Leicester",
+      "population": 508916,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2650225,
+      "latitude": "55.95206",
+      "longitude": "-3.19648",
+      "name": "Edinburgh",
+      "population": 464990,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2644688,
+      "latitude": "53.79648",
+      "longitude": "-1.54785",
+      "name": "Leeds",
+      "population": 455123,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2653822,
+      "latitude": "51.48",
+      "longitude": "-3.18",
+      "name": "Cardiff",
+      "population": 447287,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2643123,
+      "latitude": "53.48095",
+      "longitude": "-2.23743",
+      "name": "Manchester",
+      "population": 395515,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2636841,
+      "latitude": "53.00415",
+      "longitude": "-2.18538",
+      "name": "Stoke-on-Trent",
+      "population": 372775,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2652221,
+      "latitude": "52.40656",
+      "longitude": "-1.51217",
+      "name": "Coventry",
+      "population": 359262,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2636531,
+      "latitude": "54.90465",
+      "longitude": "-1.38222",
+      "name": "Sunderland",
+      "population": 335415,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2654789,
+      "latitude": "51.55306",
+      "longitude": "-0.3023",
+      "name": "Brent",
+      "population": 329100,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2655613,
+      "latitude": "53.39337",
+      "longitude": "-3.01479",
+      "name": "Birkenhead",
+      "population": 325264,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2646003,
+      "latitude": "51.53622",
+      "longitude": "-0.10304",
+      "name": "Islington",
+      "population": 319143,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2639577,
+      "latitude": "51.45625",
+      "longitude": "-0.97113",
+      "name": "Reading",
+      "population": 318014,
+      "timezone": "Europe/London"
+    },
+    {
+      "geonameid": 2645425,
+      "latitude": "53.7446",
+      "longitude": "-0.33525",
+      "name": "Hull",
+      "population": 314018,
+      "timezone": "Europe/London"
+    }
+  ]
+}
