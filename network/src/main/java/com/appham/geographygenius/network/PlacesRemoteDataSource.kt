@@ -7,7 +7,8 @@ class PlacesRemoteDataSource(
     private val placesApi: PlacesApi
 ) : PlacesRepository {
 
-    override suspend fun getPlaces():List<Place> = placesApi.getPlaces().map { placeDto ->
-        placeDto.toDomainModel()
+    override suspend fun getPlaces():List<Place> = placesApi.getCities().map { cityDto ->
+        cityDto.toPlace()
     }
+
 }

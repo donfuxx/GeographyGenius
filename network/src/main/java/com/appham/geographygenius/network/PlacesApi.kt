@@ -6,4 +6,7 @@ interface PlacesApi {
 
     @GET("api/places.json")
     suspend fun getPlaces() : List<PlaceDto>
+
+    @GET("api/cities.json")
+    suspend fun getCities() : List<CityDto>
 }
