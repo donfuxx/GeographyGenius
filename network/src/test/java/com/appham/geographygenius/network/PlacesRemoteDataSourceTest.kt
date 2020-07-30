@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test
 internal class PlacesRemoteDataSourceTest {
 
     private val placesApi: PlacesApi = mockk()
-    
+
     private val sut = PlacesRemoteDataSource(placesApi)
 
     @Test
