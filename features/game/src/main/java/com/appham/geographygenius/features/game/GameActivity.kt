@@ -30,7 +30,7 @@ class GameActivity : AppCompatActivity() {
             when (state) {
                 is GameViewState.Loading -> showLoading()
                 is GameViewState.Success -> updateMap(state.placesQuiz)
-                is GameViewState.Error -> map_view.showSnackbar(state.throwable.localizedMessage.orEmpty())
+                is GameViewState.Error -> showError(state.throwable)
             }
         })
 
@@ -47,6 +47,11 @@ class GameActivity : AppCompatActivity() {
             addMarker(placesQuiz.placeToGuess.coords, placesQuiz.placeToGuess.name)
             moveCamera(placesQuiz.placeToGuess.coords)
         }
+        map_view_container.hideShimmer()
+    }
+
+    private fun showError(throwable: Throwable) {
+        map_view.showSnackbar(throwable.localizedMessage.orEmpty())
         map_view_container.hideShimmer()
     }
 
