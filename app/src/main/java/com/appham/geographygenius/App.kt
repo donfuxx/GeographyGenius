@@ -1,6 +1,7 @@
 package com.appham.geographygenius
 
 import android.app.Application
+import com.appham.geographygenius.cache.cacheModule
 import com.appham.geographygenius.common.utils.coroutineContextModule
 import com.appham.geographygenius.domain.entities.getPlacesQuizUseCaseModule
 import com.appham.geographygenius.features.game.gameViewModelModule
@@ -26,7 +27,8 @@ class App : Application() {
                     getPlacesQuizUseCaseModule,
                     homeNavigatorModule,
                     networkModule,
-                    routerModule
+                    routerModule,
+                    cacheModule
                 )
             )
         }
