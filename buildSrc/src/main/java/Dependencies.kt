@@ -1,4 +1,5 @@
 object Modules {
+    const val cache = ":cache"
     const val domain = ":domain"
     const val network = ":network"
     const val android = ":common:android"

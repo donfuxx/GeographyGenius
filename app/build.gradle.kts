@@ -25,6 +25,7 @@ dependencies {
     implementation(project(Modules.game))
     implementation(project(Modules.home))
     implementation(project(Modules.network))
+    implementation(project(Modules.cache))
 
     implementations()
 
