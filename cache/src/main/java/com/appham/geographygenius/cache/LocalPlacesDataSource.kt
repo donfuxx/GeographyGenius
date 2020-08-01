@@ -3,7 +3,7 @@ package com.appham.geographygenius.cache
 import com.appham.geographygenius.domain.entities.Place
 import com.appham.geographygenius.domain.entities.PlacesRepository
 
-class PlacesLocalDataSource(
+class LocalPlacesDataSource(
     private val citiesDb: CityDatabase
 ) : PlacesRepository {
 

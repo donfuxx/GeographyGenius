@@ -6,11 +6,11 @@ import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
 
-internal class PlacesRemoteDataSourceTest {
+internal class RemotePlacesDataSourceTest {
 
     private val placesApi: PlacesApi = mockk()
 
-    private val sut = PlacesRemoteDataSource(placesApi)
+    private val sut = RemotePlacesDataSource(placesApi)
 
     @Test
     fun `Given placesApi returns cities When getPlaces is called Then return list of places`() = runBlocking {

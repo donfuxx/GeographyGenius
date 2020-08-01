@@ -18,7 +18,7 @@ val networkModule = module {
         get<Retrofit>().create(PlacesApi::class.java)
     }
     single<PlacesRepository> {
-        PlacesRemoteDataSource(get())
+        RemotePlacesDataSource(get())
     }
 }
 

@@ -3,7 +3,7 @@ package com.appham.geographygenius.network
 import com.appham.geographygenius.domain.entities.Place
 import com.appham.geographygenius.domain.entities.PlacesRepository
 
-class PlacesRemoteDataSource(
+class RemotePlacesDataSource(
     private val placesApi: PlacesApi
 ) : PlacesRepository {
 
