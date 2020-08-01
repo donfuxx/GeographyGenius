@@ -11,5 +11,5 @@ interface CityDao {
     suspend fun getAll(): List<CityEntity>
 
     @Insert
-    suspend fun insertAll(vararg users: CityEntity)
+    suspend fun insertAll(vararg cities: CityEntity)
 }
