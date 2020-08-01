@@ -31,6 +31,11 @@ fun DependencyHandler.networkImplementations() {
     implementation(Deps.retrofitMoshi)
 }
 
+fun DependencyHandler.cacheImplementations() {
+    implementation(Deps.roomRuntime)
+    implementation(Deps.roomKtx)
+}
+
 fun DependencyHandler.mapImplementations() {
     implementation(Deps.googleMaps)
 }

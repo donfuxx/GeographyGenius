@@ -28,6 +28,7 @@ object Versions {
     const val materialDesign = "1.1.0"
     const val okhttp = "4.7.2"
     const val retrofit = "2.9.0"
+    const val room = "2.2.5"
     const val shimmer = "0.5.0"
 }
 
@@ -50,7 +51,13 @@ object Deps {
     const val materialDesign = "com.google.android.material:material:${Versions.materialDesign}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val retrofitMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
     const val shimmer = "com.facebook.shimmer:shimmer:${Versions.shimmer}"
+}
+
+object Kapt {
+    const val roomAnnotations = "androidx.room:room-compiler:${Versions.room}"
 }
 
 object TestDeps {
@@ -62,6 +69,7 @@ object TestDeps {
     const val koTestProperty = "io.kotest:kotest-property-jvm:${Versions.koTest}"
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
     const val lifecycleCoreTesting = "android.arch.core:core-testing:${Versions.lifecycleExtensions}"
+    const val roomTest = "androidx.room:room-testing:${Versions.lifecycleExtensions}"
 }
 
 object TestRuntimeOnly {

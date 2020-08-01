@@ -1,3 +1,4 @@
+include(":cache")
 include(":network")
 include(
         ":app",
