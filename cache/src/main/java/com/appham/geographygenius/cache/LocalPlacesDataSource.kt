@@ -4,10 +4,10 @@ import com.appham.geographygenius.domain.entities.EditablePlacesDataSource
 import com.appham.geographygenius.domain.entities.Place
 
 class LocalPlacesDataSource(
-    private val citiesDb: CityDatabase
+    private val cityDao: CityDao
 ) : EditablePlacesDataSource {
 
-    override suspend fun getPlaces(): List<Place> = citiesDb.cityDao().getAll().map { cityEntity ->
+    override suspend fun getPlaces(): List<Place> = cityDao.getAll().map { cityEntity ->
         cityEntity.toPlace()
     }
 
@@ -15,7 +15,7 @@ class LocalPlacesDataSource(
         places.map { place ->
             place.toCityEntity()
         }.also { cities ->
-            citiesDb.cityDao().updateAll(*cities.toTypedArray())
+            cityDao.updateAll(*cities.toTypedArray())
         }
     }
 

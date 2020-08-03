@@ -12,6 +12,9 @@ val cacheModule = module {
         CityDatabase::class.java, "cities-db"
     ).build() }
     single {
+        get<CityDatabase>().cityDao()
+    }
+    single {
         LocalPlacesDataSource(get())
     }
     single<EditablePlacesDataSource> {
