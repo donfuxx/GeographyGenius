@@ -1,6 +1,6 @@
 package com.appham.geographygenius.network
 
-import com.appham.geographygenius.domain.entities.PlacesRepository
+import com.appham.geographygenius.domain.entities.PlacesDataSource
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -17,7 +17,10 @@ val networkModule = module {
     single<PlacesApi> {
         get<Retrofit>().create(PlacesApi::class.java)
     }
-    single<PlacesRepository> {
+    single {
+        RemotePlacesDataSource(get())
+    }
+    single<PlacesDataSource> {
         RemotePlacesDataSource(get())
     }
 }

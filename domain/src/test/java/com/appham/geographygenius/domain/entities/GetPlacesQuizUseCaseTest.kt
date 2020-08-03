@@ -16,10 +16,10 @@ internal class GetPlacesQuizUseCaseTest {
     @Test
     fun `When execute is called Then return PlacesQuiz`() = runBlocking {
         val places: List<Place> = listOf(
-            Place("A", "Some place", PlaceType.CITY, Coords(1.1, 1.2), "us"),
-            Place("B", "Another place", PlaceType.CITY, Coords(1.3, 1.4), "de"),
-            Place("C", "Yet Another place", PlaceType.CITY, Coords(1.5, 1.6), "es"),
-            Place("D", "somewhere", PlaceType.CITY, Coords(1.7, 1.8), "fr")
+            Place("A", "Some place", PlaceType.CITY, Coords(1.1, 1.2), 111,"us"),
+            Place("B", "Another place", PlaceType.CITY, Coords(1.3, 1.4), 222,"de"),
+            Place("C", "Yet Another place", PlaceType.CITY, Coords(1.5, 1.6), 333,"es"),
+            Place("D", "somewhere", PlaceType.CITY, Coords(1.7, 1.8), 444,"fr")
         )
         coEvery { repository.getPlaces() } returns places
 

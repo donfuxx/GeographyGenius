@@ -6,6 +6,9 @@ val getPlacesQuizUseCaseModule = module {
     single {
         GetPlacesQuizUseCase(get())
     }
+    single<PlacesRepository> {
+        CachingPlacesRepository(get(), get())
+    }
 }
 
 class GetPlacesQuizUseCase(

@@ -5,6 +5,7 @@ data class Place(
     val name: String,
     val type: PlaceType,
     val coords: Coords,
+    val population: Int,
     val country: String
 )
 

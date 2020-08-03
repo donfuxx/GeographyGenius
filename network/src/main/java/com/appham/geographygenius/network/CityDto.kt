@@ -17,7 +17,7 @@ data class CityDto(
 )
 
 fun CityDto.toPlace(): Place = Place(
-    geonameid, name, PlaceType.CITY, Coords(latitude, longitude), timezone.countryCode
+    geonameid, name, PlaceType.CITY, Coords(latitude, longitude), population, timezone.countryCode
 )
 
 enum class CountryTimeZone(val countryCode: String, val timezone: String) {

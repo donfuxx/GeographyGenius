@@ -3,6 +3,7 @@ package com.appham.geographygenius.cache
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.appham.geographygenius.domain.entities.EditablePlacesDataSource
 import org.koin.dsl.module
 
 val cacheModule = module {
@@ -10,6 +11,12 @@ val cacheModule = module {
         get(),
         CityDatabase::class.java, "cities-db"
     ).build() }
+    single {
+        LocalPlacesDataSource(get())
+    }
+    single<EditablePlacesDataSource> {
+        LocalPlacesDataSource(get())
+    }
 }
 
 @Database(entities = [CityEntity::class], version = 1)
