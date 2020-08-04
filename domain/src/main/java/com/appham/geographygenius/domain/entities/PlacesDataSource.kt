@@ -7,3 +7,7 @@ interface PlacesDataSource {
 interface EditablePlacesDataSource : PlacesDataSource {
     suspend fun addPlaces(vararg places: Place)
 }
+
+interface ApiPlacesDataSource : PlacesDataSource
+
+interface DbPlacesDataSource : EditablePlacesDataSource

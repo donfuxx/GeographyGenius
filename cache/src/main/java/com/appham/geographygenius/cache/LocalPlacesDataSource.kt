@@ -1,11 +1,11 @@
 package com.appham.geographygenius.cache
 
-import com.appham.geographygenius.domain.entities.EditablePlacesDataSource
+import com.appham.geographygenius.domain.entities.DbPlacesDataSource
 import com.appham.geographygenius.domain.entities.Place
 
 class LocalPlacesDataSource(
     private val cityDao: CityDao
-) : EditablePlacesDataSource {
+) : DbPlacesDataSource {
 
     override suspend fun getPlaces(): List<Place> = cityDao.getAll().map { cityEntity ->
         cityEntity.toPlace()
