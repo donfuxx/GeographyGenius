@@ -16,7 +16,7 @@ class GetPlacesQuizUseCase(
 ) {
 
     suspend fun execute(): PlacesQuiz { //TODO: add filter
-        with(placesRepository.getPlaces().toMutableList()) {
+        with(placesRepository.getPlacesFromLocal().toMutableList()) {
             val placeToGuess = removeAt((0 until size).random())
             val wrongPlaces = mutableListOf<Place>()
 

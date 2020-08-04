@@ -21,7 +21,7 @@ internal class GetPlacesQuizUseCaseTest {
             Place("C", "Yet Another place", PlaceType.CITY, Coords(1.5, 1.6), 333,"es"),
             Place("D", "somewhere", PlaceType.CITY, Coords(1.7, 1.8), 444,"fr")
         )
-        coEvery { repository.getPlaces() } returns places
+        coEvery { repository.getPlacesFromRemote() } returns places
 
         val placesQuiz = sut.execute()
 

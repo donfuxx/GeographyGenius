@@ -5,11 +5,14 @@ class CachingPlacesRepository(
     private val localSource: DbPlacesDataSource
 ) : PlacesRepository {
 
-    override suspend fun getPlaces(): List<Place> = remoteSource.getPlaces().also { places ->
+    override suspend fun getPlacesFromRemote(): List<Place> = remoteSource.getPlaces().also { places ->
         localSource.addPlaces(*places.toTypedArray())
     }
+
+    override suspend fun getPlacesFromLocal(): List<Place> = localSource.getPlaces()
 }
 
 interface PlacesRepository {
-    suspend fun getPlaces(): List<Place>
+    suspend fun getPlacesFromRemote(): List<Place>
+    suspend fun getPlacesFromLocal(): List<Place>
 }
